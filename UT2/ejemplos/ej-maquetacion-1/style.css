@@ -4,31 +4,104 @@
   box-sizing: border-box;
 }
 
-
 :root {
   /* paleta colores*/
-  --color-header-background: #0F76A0;
+  --color-header-background: #0f76a0;
   --color-cabeceralogo-h1: white;
+  --color-menu-background: #9fc8d9;
+  --color-menuprincipal-li-hover: #6facc6;
+  --color-menuprincipal-a: #333333;
+  --background-color-main: rgb(112, 112, 112);
+  --background-gradient-main: linear-gradient(
+    180deg,
+    rgba(112, 112, 112, 1) 0%,
+    rgba(233, 233, 233, 1) 100%
+  );
+  --color-infoadicional-h1: #333333;
+  --color-numerodia: white;
+  --color-nombredia: white;
+  --color-seccionpie-a: #666666;
+
+  --background-color-articulosprincipales: white;
+  --background-color-informacionadicional: #e7f1f5;
+  --background-color-article-time: #094660;
+  --background-color-pielogo: #0f76a0;
+  --background-color-pielogo-div: #9fc8d9;
 
   /* tipografías */
-  --font-size-cabeceralogo-h1:  3.5rem;
+  --font-family: Arial, sans-serif;
+  --font-size-cabeceralogo-h1: 3.5rem;
+  --font-size-menuprincipal-a: 1.2rem;
   --font-family-cabeceralogo-h1: Arial, sans-serif;
   --font-weight-cabeceralogo-h1: bold;
+  --font-weight-menuprincipal-a: bold;
+  --text-decoration-a: none;
+  --font-size-infoadicional-h1: 1.2rem;
+  --font-size-numerodia: 2.2rem;
+  --font-size-nombredia: 0.9rem;
+  --font-weight-numerodia: bold;
+  --font-family-article-time: Verdana, sans-serif;
+  --font-family-article-h1: Georgia, sans-serif;
+  --font-family-article-p: Georgia, sans-serif;
+  --font-size-article-h1: 1.9rem;
+  --font-size-article-p: 1.1rem;
+  --font-weight-article-h1: bold;
+  --font-size-seccionpie-h1: 1.25rem;
+  --font-weight-seccionpie-h1: bold;
+  --font-size-seccionpie-a: 1rem;
+  --font-weight-seccionpie-a: bold;
 
+  /* bordes */
+  --border-top-menuprincipal: 1px solid #094660;
+  --border-bottom-menuprincipal: 1px solid #094660;
+  --border-radius-cajas: 10px;
+  --border-radius-article-time: 5px;
+  --border-figure-img: 1px solid;
+  --border-radius-pielogo-div: 10px;
+
+  /* box shadows*/
+  --box-shadow-article-time: 3px 3px 5px rgba(100, 100, 100, 0.7);
+  --box-shadow-menuprincipal: 3px 3px 5px rgba(100, 100, 100, 0.7);
 
   /*utilidades*/
-  --margin-0-centrado:0 auto;
+  --margin-0-centrado: 0 auto;
 
-  /* tamaños contenedores */
-  --max-width-container: 1200px;
-  --padding-cabecera: 0% 2%; 
-  --padding-top-cabecera-div: 45px;
-  --height-header: 150px;
-  --width-articulosprincipales: 70%;
-  --width-infoadicional: 30%;
+  /* tamaños */
+  --max-width-container: 1100px;
+
+  --width-articulosprincipales: 69%;
+  --width-infoadicional: 29%;
   --width-articulosprincipales-img: 70%;
+  --width-article-time: 80px;
+  --width-seccionpie: 33.33%;
 
+  --height-header: 150px;
+  --height-menuprincipal: 50px;
+  --height-menuprincipal-li: 48px;
 
+  --padding-cabecera: 0% 2%;
+  --padding-menuprincipal: 0% 2%;
+  --padding-pielogo: 2%;
+  --padding-top-cabecera-div: 45px;
+  --padding-top-main: 30px;
+  --padding-top-articulosprincipales: 30px;
+  --padding-menuprincipal-li: 15px 10px 0px 10px;
+  --padding-infoadicional: 20px;
+  --padding-article: 0px 40px 20px 40px;
+  --padding-article-time: 15px 5px;
+  --padding-figure-img: 5px;
+  --padding-seccionpie: 3%;
+
+  --margin-right-menuprincipal-li: 5px;
+  --margin-left-infoadicional: 2%;
+  --margin-bottom-infoadicional-h1: 15px;
+  --margin-bottom-article-h1: 5px;
+  --margin-figure: 10px 0px;
+  --margin-top-seccionpie-p: 5px;
+
+  /* positions */
+  --top-article-time: -5px;
+  --left-article-time: -60px;
 }
 
 #cabeceralogo {
@@ -40,7 +113,7 @@
 #cabeceralogo > div {
   max-width: var(--max-width-container);
   margin: var(--margin-0-centrado);
-  padding-top: var(--cabecera-div-padding-top);
+  padding-top: var(--padding-top-cabecera-div);
 }
 
 #cabeceralogo h1 {
@@ -51,13 +124,13 @@
 }
 
 #articulosprincipales {
-    float: left;
-    width: var(--width-articulosprincipales)
+  float: left;
+  width: var(--width-articulosprincipales);
 }
 
 #infoadicional {
-   width: var(--width-infoadicional); 
-   float: left;
+  width: var(--width-infoadicional);
+  float: left;
 }
 
 #articulosprincipales img {
