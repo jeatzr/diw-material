@@ -6,9 +6,9 @@
 
 :root {
   /* paleta colores*/
-  --color-header-background: #0f76a0;
+  --background-color-header: #0f76a0; /* ex color-header-background */
   --color-cabeceralogo-h1: white;
-  --color-menu-background: #9fc8d9;
+  --background-color-menuprincipal: #9fc8d9; /* color-menu-background */
   --color-menuprincipal-li-hover: #6facc6;
   --color-menuprincipal-a: #333333;
   --background-color-main: rgb(112, 112, 112);
@@ -67,7 +67,7 @@
   --margin-0-centrado: 0 auto;
 
   /* tamaños */
-  --max-width-container: 1100px;
+  --max-width-container: 90%;
 
   --width-articulosprincipales: 69%;
   --width-infoadicional: 29%;
