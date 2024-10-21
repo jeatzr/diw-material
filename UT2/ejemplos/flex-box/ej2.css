@@ -7,13 +7,14 @@
   background-color: #d89aff;
 }
 #caja-1 {
-  flex: 1 1 200px;
+  width: 200px;
+  flex: 1 1 auto;
 }
 #caja-2 {
   flex: 1 5 100px;
 }
 #caja-3 {
-  flex: 1 5 100px;
+  flex: 2 5 100px;
 }
 #caja-4 {
   flex: 1 5 100px;
