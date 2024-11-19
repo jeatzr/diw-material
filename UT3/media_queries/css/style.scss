@@ -39,6 +39,7 @@ $breakpoints: (
 }
 
 body {
+  // versión por defecto "small"
   background-color: $default-bg-color;
 
   @include respond-to("medium") {
@@ -47,7 +48,7 @@ body {
   @include respond-to("large") {
     background-color: $large-size-bg-color;
   }
-  @include respond-to("huge9") {
+  @include respond-to("huge") {
     background-color: $huge-size-bg-color;
   }
 }
