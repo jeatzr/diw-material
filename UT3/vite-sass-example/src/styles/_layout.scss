@@ -1,0 +1,16 @@
+@use "globals" as *;
+
+body {
+  // default color "small"
+  background-color: $default-bg-color;
+
+  @include respond-to("medium") {
+    background-color: $medium-size-bg-color;
+  }
+  @include respond-to("large") {
+    background-color: $large-size-bg-color;
+  }
+  @include respond-to("huge") {
+    background-color: $huge-size-bg-color;
+  }
+}

@@ -1,0 +1,18 @@
+body {
+  background-color: red;
+}
+@media (min-width: 800px) {
+  body {
+    background-color: rgb(106, 45, 97);
+  }
+}
+@media (min-width: 1000px) {
+  body {
+    background-color: rgb(151, 40, 155);
+  }
+}
+@media (min-width: 1200px) {
+  body {
+    background-color: green;
+  }
+}/*# sourceMappingURL=style.css.map */
