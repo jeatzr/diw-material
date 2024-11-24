@@ -13,8 +13,9 @@ Crear una página web responsive a partir del diseño de las dos páginas (landi
 ### **1. Diseñar la versión móvil en Figma**
 
 1. A partir del diseño de escritorio de las dos páginas ya realizado en una práctica anterior:
-   - Diseñar la versión móvil siguiendo principios de diseño responsive.
-   - Exportar los recursos gráficos necesarios para la implementación.
+   - Diseñar la versión móvil o estrecha siguiendo principios de diseño responsive. El diseño móvil se hará en base a las variables de Figma ya definidas y también puede generar nuevas variables.
+   - Realizar los cambios necesarios en el sistema de diseño para que de cabida a la versión móvil.
+   - Exportar los recursos gráficos necesarios y las variables en versión SASS para la implementación.
 
 ---
 
@@ -49,7 +50,8 @@ src/
 
 1. **Variables**:
 
-   - Define al menos 3 variables en el archivo `_variables.scss`.
+   - Pegar las variables exportadas de Figma en formato SASS al fichero `_variables.scss`.
+   - Define otras variables a mano si fuese necesario pero siempre en dicho archivo.
    - Ejemplo:
 
    ```scss
@@ -142,15 +144,13 @@ src/
    ```
 
 5. **Compilación SCSS**:
-   - Usa el archivo principal `main.scss` para importar todos los parciales:
+   - Usa el archivo principal `main.scss` para importar todos los parciales: (usar la directiva `@use` en vez de la deprecada `@import`)
      ```scss
-     @import "variables";
-     @import "mixins";
-     @import "layout";
-     @import "header";
-     @import "footer";
+     @use "layout";
+     @use "header";
+     ...
      ```
-   - Compila los archivos SCSS en un único archivo CSS utilizando Vite. Consulta el archivo **`anexo_compilacion_scss.md`** para los detalles.
+   - Consulta el archivo **[ANEXO2-variables-sass](ANEXO2-variables-sass.md)** para los detalles.
 
 ---
 
