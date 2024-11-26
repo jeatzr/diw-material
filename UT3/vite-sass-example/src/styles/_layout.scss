@@ -1,16 +1,30 @@
 @use "globals" as *;
 
 body {
-  // default color "small"
+  // default color "huge"
   background-color: $default-bg-color;
+
+  @include respond-to("large") {
+    background-color: $large-size-bg-color;
+  }
 
   @include respond-to("medium") {
     background-color: $medium-size-bg-color;
   }
-  @include respond-to("large") {
-    background-color: $large-size-bg-color;
+
+  @include respond-to("narrow") {
+    background-color: $narrow-size-bg-color;
   }
-  @include respond-to("huge") {
-    background-color: $huge-size-bg-color;
+}
+
+.container {
+  background-color: white;
+  height: 300px;
+  max-width: 1200px;
+  margin: 0 auto; // Centrar contenido
+  padding: 0 1rem; // Espaciado interno lateral
+
+  @include respond-to("large") {
+    width: 90%;
   }
 }
