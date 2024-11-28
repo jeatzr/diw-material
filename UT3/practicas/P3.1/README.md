@@ -170,7 +170,7 @@ src/
    });
    ```
 
-4.
+4. Si tu sitio web consta de más de un HTML tendrás que darle la configuración necesaria según se explica en el [ANEXO IV](ANEXO4-varios-html-y-vite.md)
 
 ---
 
@@ -212,3 +212,4 @@ src/
 - **[ANEXO1-vite](ANEXO1-vite.md)**: Cómo crear el proyecto Vite y organizar las carpetas.
 - **[ANEXO2-variables-sass](ANEXO2-variables-sass.md)**: Detalles sobre cómo compilar múltiples archivos SCSS en uno solo.
 - **[ANEXO3-layout](ANEXO3-layout.md)**: Detalle de qué debe contener el fichero `_layout.sass`.
+- **[ANEXO IV](ANEXO4-varios-html-y-vite.md)**: Cómo tener hacer que VITE compile varios HTML.
