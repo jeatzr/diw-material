@@ -19,9 +19,9 @@ export default defineConfig({
   build: {
     rollupOptions: {
       input: {
-        main: resolve(__dirname, "index.html"), // Página principal
-        about: resolve(__dirname, "about.html"), // Otra página
-        contact: resolve(__dirname, "contact.html"), // Otra página
+        main: resolve(__dirname, "./src/index.html"), // Página principal
+        about: resolve(__dirname, "./src/about.html"), // Otra página
+        contact: resolve(__dirname, "./src/contact.html"), // Otra página
         // Añade más entradas si es necesario
       },
     },
