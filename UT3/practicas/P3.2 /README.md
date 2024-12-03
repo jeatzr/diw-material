@@ -6,10 +6,11 @@ Crear un portfolio personal como programadores frontend para demostrar las habil
 
 1. **Prototipo en Figma**:
 
-   - Diseño para escritorio y móvil.
-   - Sistema de diseño: paleta de colores, tipografías, iconos.
-   - Variables en Figma para colores, fuentes, espaciados y tamaños.
-   - Exportación de variables de diseño a formato SASS.
+   - Comenzaremos creando una página `Referencias` donde podemos poner cualquier fuente de inspiración: capturas de otros portfolios, paletas de colores que nos gusten, fuentes que nos inspiren, plugins de JS que nos puedan ayudar. Lo que aparece en esta página no tiene por qué acabar en el diseño final, es solo inspiración e ideas
+   - `Sistema de diseño`: paleta de colores, tipografías, iconos.
+   - No olvidar crear las **Variables** en Figma en **distintas colecciones** para colores, fuentes, espaciados y tamaños. Dentro de cada colección las variables están divididas en categorías que se definen usando el caracter `/` por ejemplo en `Fuentes` encontraremos `font-weight/h1-bold` que su valor puede ser `800`
+   - Diseño para escritorio y móvil. Crearlos en dos páginas distintas. Los diseños se crean en base a las variables. Es decir cuando pongamos un color, font family, font weight, font size etc, no pondremos su valor absoluto estático sino que pondremos la referencia a la variable.
+   - Exportar todas las variables en formato `SASS` para usarlas en nuestro diseño. Las pegaremos en el fichero de parciales `_variables.scss`.
 
 2. **Desarrollo del Portfolio**:
 
@@ -17,7 +18,7 @@ Crear un portfolio personal como programadores frontend para demostrar las habil
    - Organización modular en SASS:
      - `main.scss` como archivo principal.
      - Parciales: `_variables.scss`, `_mixins.scss`, `_globals.scss`, y un SASS por cada componente principal.
-   - Diseño responsivo con breakpoints manejado mediante un `mixin`.
+   - Diseño responsivo con breakpoints manejado mediante un `mixin` y un mapa de SASS donde tendremos declarados dichos breakpoints.
 
 3. **Publicación**:
 
