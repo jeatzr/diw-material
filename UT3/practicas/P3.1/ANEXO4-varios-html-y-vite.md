@@ -37,14 +37,15 @@ export default defineConfig({
 Asegúrate de que los archivos HTML que quieres incluir estén organizados correctamente en tu proyecto. En el **ANEXO I** se explica cómo tener todo el código dentro de `src` Por ejemplo:
 
 ```plaintext
-src/
-   ├── index.html
-   ├── about.html
-   ├── contact.html
-   ├── src/
-   │   └── main.js
-   ├── vite.config.js
-   └── package.json
+├src/
+|   ├── index.html
+|   ├── about.html
+|   ├── contact.html
+|   ├── scripts/
+│   |   └── main.js
+|   └── style/
+├── vite.config.js
+└── package.json
 ```
 
 ---
