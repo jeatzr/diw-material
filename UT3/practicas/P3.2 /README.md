@@ -1,6 +1,13 @@
 # **P3.2 - Práctica Integral: Portfolio Personal**
 
-## **Descripción General**
+- [**P3.2 - Práctica Integral: Portfolio Personal**](#p32---práctica-integral-portfolio-personal)
+  - [**1. Descripción General**](#1-descripción-general)
+  - [**2. Publicación en GitHub Pages**](#2-publicación-en-github-pages)
+  - [**3. Rúbrica de Evaluación**](#3-rúbrica-de-evaluación)
+  - [**4. Entrega**](#4-entrega)
+  - [**5. Inspiración**](#5-inspiración)
+
+## **1. Descripción General**
 
 Crear un portfolio personal como programadores frontend para demostrar las habilidades aprendidas durante el trimestre en CSS, SASS y diseño de interfaces. El proyecto incluirá:
 
@@ -32,7 +39,7 @@ Crear un portfolio personal como programadores frontend para demostrar las habil
 
 ---
 
-## **Publicación en GitHub Pages**
+## **2. Publicación en GitHub Pages**
 
 1. Crear un repositorio en GitHub y subir el proyecto.
 2. Configurar GitHub Pages:
@@ -42,7 +49,7 @@ Crear un portfolio personal como programadores frontend para demostrar las habil
 
 ---
 
-## **Rúbrica de Evaluación**
+## **3. Rúbrica de Evaluación**
 
 | **Criterio**                       | **Descripción**                                                                                                            | **Puntuación Máxima** |
 | ---------------------------------- | -------------------------------------------------------------------------------------------------------------------------- | --------------------- |
@@ -60,11 +67,11 @@ Crear un portfolio personal como programadores frontend para demostrar las habil
 
 ---
 
-## **Entrega**
+## **4. Entrega**
 
 Entregaremos solo un enlade a GitHub del proyecto. No te olvides de crear el `README.md` con la información de la práctica, autoría y enlaces requeridos.
 
-## **Inspiración**
+## **5. Inspiración**
 
 [25+ Stunning Portfolios with code](https://dev.to/anmolbaranwal/stunning-portfolios-that-will-blow-your-mind-fuel-your-creativity-226o)
 
