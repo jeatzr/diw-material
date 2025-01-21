@@ -1,4 +1,4 @@
-# Práctica 4.1: Galería de Imágenes Responsiva
+# Práctica 4.2: Galería de Imágenes Responsiva
 
 ## **Descripción**
 
