@@ -1,32 +1,29 @@
-# Guía Completa de `srcset`
+# Guía Completa: Optimización de Imágenes para la Web
 
-El atributo `srcset` es una herramienta esencial en el desarrollo web moderno para optimizar imágenes y adaptarlas a diferentes dispositivos y resoluciones.
-
----
-
-## ¿Qué es `srcset`?
-
-El atributo `srcset` permite especificar **varias versiones de una imagen** para que el navegador elija la más adecuada según:
-
-1. **El ancho de la pantalla del usuario.**
-2. **La densidad de píxeles del dispositivo (Device Pixel Ratio, DPR).**
-
-### Beneficios de usar `srcset`
-
-- **Optimización del rendimiento:** Reduce el peso de las imágenes en pantallas pequeñas o con baja resolución.
-- **Mejor experiencia visual:** Garantiza imágenes nítidas en pantallas Retina o de alta densidad.
-- **SEO:** Mejora la velocidad de carga, un factor importante para los motores de búsqueda.
-- **Compatibilidad:** Soportado por todos los navegadores modernos.
+En este documento aprenderás cómo utilizar los atributos `srcset` y la etiqueta `<picture>` para optimizar imágenes en páginas web. También veremos ejemplos prácticos, incluyendo un caso real basado en el sitio web de Apple.
 
 ---
 
-## Sintaxis de `srcset`
+## **Introducción**
 
-### **1. Usando ancho en píxeles (`w`)**
+Optimizar imágenes para la web es crucial para mejorar:
 
-Este método especifica diferentes versiones de una imagen según su **ancho en píxeles**.
+1. **La velocidad de carga** de una página.
+2. **La experiencia del usuario**, especialmente en dispositivos móviles o de alta resolución.
+3. **El rendimiento SEO**, ya que Google prioriza sitios rápidos y bien optimizados.
 
-#### Ejemplo:
+---
+
+## **1. Usando el atributo `srcset`**
+
+El atributo `srcset` permite definir múltiples versiones de una imagen y delega al navegador la decisión de cuál utilizar según:
+
+- **El ancho del viewport.**
+- **La densidad de píxeles (Device Pixel Ratio, DPR).**
+
+### **1.1. Sintaxis básica de `srcset`**
+
+#### Ejemplo con anchos (`w`):
 
 ```html
 <img
@@ -37,21 +34,14 @@ Este método especifica diferentes versiones de una imagen según su **ancho en 
 />
 ```
 
-#### Detalles:
-
-- **`320w, 640w, 1280w`**: Especifica el ancho de cada versión de la imagen.
-- **`sizes`**: Define cuánto espacio ocupará la imagen en la pantalla:
-  - `(max-width: 600px) 100vw`: Si el ancho del viewport es ≤ 600px, la imagen ocupará el 100% del ancho del viewport.
-  - `50vw`: En pantallas más grandes, la imagen ocupará el 50% del ancho del viewport.
-- **`src`**: Imagen predeterminada utilizada por navegadores que no soportan `srcset`.
+- **`320w, 640w, 1280w`**: Define imágenes de diferentes anchos.
+- **`sizes`**: Describe el espacio que ocupará la imagen en la pantalla:
+  - `(max-width: 600px) 100vw`: Ocupa el 100% del ancho del viewport si este tiene ≤ 600px.
+  - `50vw`: Ocupa el 50% del ancho del viewport en otros casos.
 
 ---
 
-### **2. Usando densidad de píxeles (`x`)**
-
-Este método se basa en la **densidad de píxeles** del dispositivo (Device Pixel Ratio).
-
-#### Ejemplo:
+#### Ejemplo con densidad de píxeles (`x`):
 
 ```html
 <img
@@ -61,78 +51,114 @@ Este método se basa en la **densidad de píxeles** del dispositivo (Device Pixe
 />
 ```
 
-#### Detalles:
-
-- **`1x, 2x, 3x`**: Indican la densidad de píxeles para cada versión:
+- **`1x, 2x, 3x`**: Define imágenes según la densidad de píxeles:
   - `1x`: Pantallas estándar.
   - `2x`: Pantallas Retina.
   - `3x`: Pantallas de alta densidad.
 
-El navegador selecciona la imagen adecuada según el DPR del dispositivo.
+---
+
+### **1.2. Cuándo usar `srcset`**
+
+Usa `srcset` cuando:
+
+- Necesites cambiar solo el **tamaño** o la **resolución** de una imagen.
+- Quieras servir imágenes más ligeras a dispositivos con pantallas pequeñas.
 
 ---
 
-### **3. Ejemplo combinado: Ancho y densidad**
+## **2. Usando la etiqueta `<picture>`**
 
-Puedes usar una combinación de **ancho** y **densidad** para cubrir más casos.
+La etiqueta `<picture>` permite definir imágenes completamente diferentes según:
 
-#### Ejemplo:
+- El formato compatible con el navegador.
+- Condiciones específicas como el ancho del viewport o la orientación de la pantalla.
+
+### **2.1. Sintaxis básica de `<picture>`**
 
 ```html
-<img
-  srcset="
-    image-320.jpg 320w,
-    image-640.jpg 640w 1x,
-    image-1280.jpg 1280w 2x
-  "
-  sizes="(max-width: 600px) 100vw, 50vw"
-  src="image-320.jpg"
-  alt="Ejemplo combinado de srcset"
-/>
+<picture>
+  <source srcset="image-1920.webp" type="image/webp" />
+  <source srcset="image-1920.jpg" type="image/jpeg" />
+  <img src="fallback.jpg" alt="Ejemplo de imagen" />
+</picture>
 ```
 
-- Aquí, el navegador considera tanto el **ancho del viewport** como la **densidad de píxeles** para elegir la mejor versión.
+- **`<source>`**: Define condiciones específicas para cada versión de la imagen.
+- **`<img>`**: Actúa como respaldo si el navegador no soporta `<picture>` o los formatos especificados.
 
 ---
 
-## Herramientas para Implementar `srcset`
+### **2.2. Ejemplo avanzado con condiciones de ancho**
 
-1. **Generación de imágenes múltiples:**
-
-   - [ImageMagick](https://imagemagick.org/): Herramienta de línea de comandos para crear múltiples versiones de una imagen.
-   - [Sharp](https://sharp.pixelplumbing.com/): Librería para manipulación de imágenes en Node.js.
-
-2. **Optimización de imágenes:**
-
-   - [TinyPNG](https://tinypng.com/): Reduce el peso de imágenes PNG y JPG.
-   - [Squoosh](https://squoosh.app/): Herramienta moderna para optimización avanzada.
-
-3. **Simulación y pruebas:**
-   - Usa las **herramientas de desarrollo del navegador** (Ctrl + Shift + M) para probar diferentes tamaños de pantalla y DPR.
-
----
-
-## ¿Cuándo usar `srcset`?
-
-### **1. Diseño responsivo**
-
-Si tu diseño cambia según el ancho del viewport, usa `srcset` con descriptores de ancho (`w`) y define un atributo `sizes`.
-
-### **2. Optimización para Retina**
-
-Si esperas que tu público use pantallas de alta densidad, proporciona versiones en diferentes densidades (`1x`, `2x`, `3x`).
-
-### **3. Reducción de peso**
-
-En dispositivos con pantallas pequeñas o de baja resolución, sirve imágenes más ligeras.
+```html
+<picture>
+  <source
+    srcset="image-small.webp, image-small-2x.webp 2x"
+    media="(max-width: 600px)"
+    type="image/webp"
+  />
+  <source
+    srcset="image-large.jpg, image-large-2x.jpg 2x"
+    media="(min-width: 601px)"
+    type="image/jpeg"
+  />
+  <img src="fallback.jpg" alt="Ejemplo avanzado con picture" />
+</picture>
+```
 
 ---
 
-## Ejercicio Práctico
+### **2.3. Caso real: Ejemplo del sitio web de Apple**
 
-### **Tarea**
+Apple utiliza `<picture>` para optimizar imágenes según el tamaño del dispositivo y la densidad de píxeles.
 
-Implementa `srcset` en una página HTML para optimizar una imagen en diferentes dispositivos.
+#### Código del ejemplo:
+
+```html
+<picture id="overview-augment-world-mac-iphone-2" class="template-image-large">
+  <source
+    srcset="
+      /v/mac/home/cb/images/overview/augment/world_mac_iphone__mr1xfuchl56e_small.jpg,
+      /v/mac/home/cb/images/overview/augment/world_mac_iphone__mr1xfuchl56e_small_2x.jpg 2x
+    "
+    media="(max-width:734px)"
+  />
+  <source
+    srcset="
+      /v/mac/home/cb/images/overview/augment/world_mac_iphone__mr1xfuchl56e_medium.jpg,
+      /v/mac/home/cb/images/overview/augment/world_mac_iphone__mr1xfuchl56e_medium_2x.jpg 2x
+    "
+    media="(max-width:1068px)"
+  />
+  <source
+    srcset="
+      /v/mac/home/cb/images/overview/augment/world_mac_iphone__mr1xfuchl56e_large.jpg,
+      /v/mac/home/cb/images/overview/augment/world_mac_iphone__mr1xfuchl56e_large_2x.jpg 2x
+    "
+    media="(max-width:1440px)"
+  />
+  <source
+    srcset="
+      /v/mac/home/cb/images/overview/augment/world_mac_iphone__mr1xfuchl56e_xlarge.jpg,
+      /v/mac/home/cb/images/overview/augment/world_mac_iphone__mr1xfuchl56e_xlarge_2x.jpg 2x
+    "
+    media="(min-width:0px)"
+  />
+  <img
+    src="/v/mac/home/cb/images/overview/augment/world_mac_iphone__mr1xfuchl56e_xlarge.jpg"
+    alt="An iPhone next to an open Mac laptop"
+  />
+</picture>
+```
+
+---
+
+## **3. Ejercicios**
+
+### **Ejercicio 1: Usando `srcset`**
+
+Crea una página que utilice `srcset` para cargar imágenes adaptativas según el ancho del viewport.
 
 #### Código base:
 
@@ -142,36 +168,57 @@ Implementa `srcset` en una página HTML para optimizar una imagen en diferentes 
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Ejemplo de srcset</title>
+    <title>Ejemplo con srcset</title>
   </head>
   <body>
-    <h1>Optimización de imágenes con srcset</h1>
+    <h1>Optimización con srcset</h1>
     <img
       srcset="image-320.jpg 320w, image-640.jpg 640w, image-1280.jpg 1280w"
       sizes="(max-width: 600px) 100vw, 50vw"
       src="image-1280.jpg"
-      alt="Ejemplo de optimización de imagen"
+      alt="Ejemplo con srcset"
     />
   </body>
 </html>
 ```
 
-### **Pruebas:**
+---
 
-1. Abre el archivo en el navegador.
-2. Activa el modo responsivo (Ctrl + Shift + M).
-3. Cambia el tamaño del viewport y observa qué imagen se carga.
+### **Ejercicio 2: Usando `<picture>`**
+
+Implementa `<picture>` para servir diferentes imágenes según el tamaño del dispositivo y la densidad de píxeles.
+
+#### Código base:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ejemplo con Picture</title>
+  </head>
+  <body>
+    <h1>Optimización con Picture</h1>
+    <picture>
+      <source
+        srcset="image-small.webp, image-small-2x.webp 2x"
+        media="(max-width: 600px)"
+        type="image/webp"
+      />
+      <source
+        srcset="image-large.jpg, image-large-2x.jpg 2x"
+        media="(min-width: 601px)"
+        type="image/jpeg"
+      />
+      <img src="fallback.jpg" alt="Ejemplo avanzado con picture" />
+    </picture>
+  </body>
+</html>
+```
 
 ---
 
-## Conclusión
+## **Conclusión**
 
-El atributo `srcset` es una herramienta poderosa y relevante para:
-
-- Mejorar el rendimiento web.
-- Optimizar imágenes para dispositivos modernos.
-- Ofrecer una mejor experiencia al usuario.
-
-Adoptar `srcset` en tus proyectos asegura que tus imágenes sean flexibles, ligeras y listas para cualquier pantalla.
-
----
+Usar `srcset` y `<picture>` es esencial para optimizar imágenes en la web, mejorar la experiencia del usuario y garantizar que las imágenes sean accesibles en cualquier dispositivo. El ejemplo del sitio web de Apple demuestra cómo estas herramientas pueden implementarse de manera avanzada y efectiva.
