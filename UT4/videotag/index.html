@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Acuario con Peces</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Acuario Virtual</h1>
+      <p>Disfruta de un relajante acuario en tu pantalla.</p>
+    </header>
+
+    <main>
+      <section class="video-container">
+        <video id="aquarium-video" controls autoplay loop muted>
+          <source
+            src="aquarium-480p.mp4"
+            type="video/mp4"
+            media="(max-width: 480px)"
+          />
+          <source
+            src="aquarium-720p.mp4"
+            type="video/mp4"
+            media="(max-width: 720px)"
+          />
+          <source
+            src="aquarium-1080p.mp4"
+            type="video/mp4"
+            media="(max-width: 1080px)"
+          />
+          <source
+            src="aquarium-4k.mp4"
+            type="video/mp4"
+            media="(min-width: 1081px)"
+          />
+          Tu navegador no soporta el video.
+        </video>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; 2025 Acuario Virtual. Todos los derechos reservados.</p>
+    </footer>
+  </body>
+</html>
