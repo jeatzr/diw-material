@@ -25,12 +25,20 @@
     - [🔧 **Configuración de Tailwind en un Proyecto React**](#-configuración-de-tailwind-en-un-proyecto-react)
       - [**1️⃣ Crear un Proyecto React (si no lo tienes aún)**](#1️⃣-crear-un-proyecto-react-si-no-lo-tienes-aún)
       - [**2️⃣ Instalar Tailwind CSS**](#2️⃣-instalar-tailwind-css)
-      - [**3️⃣ Configurar Tailwind en `tailwind.config.js`**](#3️⃣-configurar-tailwind-en-tailwindconfigjs)
+      - [**3️⃣ Configurar el plugin de `Vite`**](#3️⃣-configurar-el-plugin-de-vite)
       - [**4️⃣ Agregar Tailwind a los Estilos Globales**](#4️⃣-agregar-tailwind-a-los-estilos-globales)
   - [🎨 **Creación de Componentes Estilizados con Tailwind**](#-creación-de-componentes-estilizados-con-tailwind)
     - [**Ejemplo de un Botón Estilizado con Tailwind**](#ejemplo-de-un-botón-estilizado-con-tailwind)
   - [🚀 **Ejemplo de Aplicación Completa con Tailwind y React**](#-ejemplo-de-aplicación-completa-con-tailwind-y-react)
     - [**Explicación del Código:**](#explicación-del-código)
+  - [🎨 **7️⃣ Integrando Variables de Figma en Tailwind CSS**](#-7️⃣-integrando-variables-de-figma-en-tailwind-css)
+    - [🔹 **1️⃣ Exportar Variables de Figma**](#-1️⃣-exportar-variables-de-figma)
+    - [🔹 **2️⃣ Convertir Variables de Figma a Tailwind CSS**](#-2️⃣-convertir-variables-de-figma-a-tailwind-css)
+      - [🎨 **Colores en Figma**](#-colores-en-figma)
+      - [🔡 **Tipografías en Figma**](#-tipografías-en-figma)
+    - [🔹 **3️⃣ Agregar Variables en `tailwind.config.js`**](#-3️⃣-agregar-variables-en-tailwindconfigjs)
+    - [🔹 **4️⃣ Usar Variables en CSS con `@font-face` (Opcional)** Si usamos](#-4️⃣-usar-variables-en-css-con-font-face-opcional-si-usamos)
+    - [🔹 **5️⃣ Automatizar con Plugins de Figma**](#-5️⃣-automatizar-con-plugins-de-figma)
 
 ---
 
@@ -250,14 +258,7 @@ Para instalar **Tailwind CSS** en un proyecto de React creado con Vite o Create 
 
 #### **1️⃣ Crear un Proyecto React (si no lo tienes aún)**
 
-Si no tienes un proyecto de React, puedes crearlo con:
-
-```bash
-npx create-react-app mi-proyecto
-cd mi-proyecto
-```
-
-O si usas **Vite**, más rápido y optimizado:
+Con **Vite** puedes crear un proyecto de React, más rápido y optimizado que con `npx create-react-app`:
 
 ```bash
 npm create vite@latest mi-proyecto --template react
@@ -266,27 +267,25 @@ cd mi-proyecto
 
 #### **2️⃣ Instalar Tailwind CSS**
 
-Ejecuta el siguiente comando para instalar Tailwind y sus dependencias:
+En el caso que hayas creado el proyecto con **Vite**, ejecuta el siguiente comando para instalar Tailwind y sus dependencias:
 
 ```bash
-npm install -D tailwindcss postcss autoprefixer
-npx tailwindcss init -p
+npm install tailwindcss @tailwindcss/vite
 ```
 
-Este comando generará un archivo de configuración `tailwind.config.js`.
+#### **3️⃣ Configurar el plugin de `Vite`**
 
-#### **3️⃣ Configurar Tailwind en `tailwind.config.js`**
-
-Edita `tailwind.config.js` para asegurarte de que Tailwind escanea los archivos `.jsx` o `.tsx` de React:
+Añade el plugin `@tailwindcss/vite` a tu configuración Vite:
 
 ```javascript
-module.exports = {
-  content: ["./src/**/*.{js,jsx,ts,tsx}"],
-  theme: {
-    extend: {},
-  },
-  plugins: [],
-};
+import { defineConfig } from "vite";
+import react from "@vitejs/plugin-react";
+import tailwindcss from "@tailwindcss/vite"; //<-------
+
+// https://vite.dev/config/
+export default defineConfig({
+  plugins: [react(), tailwindcss()], //<-------
+});
 ```
 
 #### **4️⃣ Agregar Tailwind a los Estilos Globales**
@@ -294,9 +293,7 @@ module.exports = {
 En el archivo `index.css` o `src/index.css`, importa Tailwind con:
 
 ```css
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 ```
 
 ---
@@ -391,3 +388,133 @@ export default App;
 3. `App.jsx` renderiza múltiples `UserCard` con datos dinámicos.
 
 ---
+
+## 🎨 **7️⃣ Integrando Variables de Figma en Tailwind CSS**
+
+Cuando trabajamos en **Figma**, definimos variables de diseño como:
+
+- **Paleta de colores** 🎨
+- **Tipografías y tamaños de texto** 🔤
+- **Espaciados, sombras y bordes** 🔲
+
+Podemos **exportar estas variables** y usarlas dentro de `tailwind.config.js` para mantener la coherencia entre diseño y código.
+
+---
+
+### 🔹 **1️⃣ Exportar Variables de Figma**
+
+En **Figma**, podemos definir estilos globales para:
+✅ **Colores**  
+✅ **Tipografías**  
+✅ **Espaciados (padding, margin)**
+
+📌 **Cómo extraer los estilos:**
+
+- **Opción 1 (Manual):** Copia los valores desde Figma y agrégales nombres adecuados. (no recomendado)
+- **Opción 2 (Automática):** Usa plugins como `"Tailwind CSS Export"` o `"Figma Tokens"` para generar la configuración en formato JSON.
+
+---
+
+### 🔹 **2️⃣ Convertir Variables de Figma a Tailwind CSS**
+
+Supongamos que en Figma tenemos los siguientes estilos:
+
+#### 🎨 **Colores en Figma**
+
+- Azul Primario: #1E40AF
+- Azul Secundario: #3B82F6
+- Gris Oscuro: #374151
+- Gris Claro: #D1D5DB
+- Rojo de Advertencia: #EF4444
+
+#### 🔡 **Tipografías en Figma**
+
+- Fuente Principal: Inter
+- Fuente Secundaria: Roboto
+- Tamaños: 12px, 14px, 16px, 18px, 24px, 32px
+
+---
+
+---
+
+### 🔹 **3️⃣ Agregar Variables en `tailwind.config.js`**
+
+Modificamos `tailwind.config.js` para integrar las variables de Figma en Tailwind CSS:
+
+```javascript
+module.exports = {
+  content: ["./src/**/*.{js,jsx,ts,tsx}"],
+  theme: {
+    extend: {
+      colors: {
+        primary: "#1E40AF", // Azul Primario
+        secondary: "#3B82F6", // Azul Secundario
+        darkGray: "#374151", // Gris Oscuro
+        lightGray: "#D1D5DB", // Gris Claro
+        warning: "#EF4444", // Rojo Advertencia
+      },
+      fontFamily: {
+        sans: ["Inter", "sans-serif"],
+        roboto: ["Roboto", "sans-serif"],
+      },
+      spacing: {
+        13: "3.25rem",
+        15: "3.75rem",
+        18: "4.5rem",
+      },
+    },
+  },
+  plugins: [],
+};
+```
+
+📌 **Ahora podemos usar estas variables en nuestros estilos Tailwind:**
+
+```html
+<div class="bg-primary text-lightGray p-5">
+  <h1 class="text-2xl font-sans">¡Hola, esta es una fuente personalizada!</h1>
+</div>
+```
+
+### 🔹 **4️⃣ Usar Variables en CSS con `@font-face` (Opcional)** Si usamos
+
+**fuentes personalizadas**, podemos definirlas en `index.css`:
+
+```css
+@font-face {
+  font-family: "CustomFont";
+  src: url("/src/assets/fonts/CustomFont-Regular.woff2") format("woff2"), url("/src/assets/fonts/CustomFont-Regular.woff")
+      format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+```
+
+Y luego en Tailwind:
+
+```javascript
+fontFamily: {
+  custom: ["CustomFont", "sans-serif"],
+}
+```
+
+Ahora podemos usarlo con:
+
+```html
+<p class="font-custom text-lg">Texto con fuente personalizada</p>
+```
+
+---
+
+### 🔹 **5️⃣ Automatizar con Plugins de Figma**
+
+Para evitar copiar variables manualmente, podemos usar plugins como:
+
+- **"Tailwind CSS Export"** → Convierte estilos de Figma en código Tailwind.
+- **"Figma Tokens"** → Exporta colores, tipografías y espacios a JSON.
+
+📢 **Cómo usarlo**:
+1️⃣ Instalar el plugin en Figma.  
+2️⃣ Seleccionar los estilos que queremos exportar.  
+3️⃣ Generar un archivo JSON con los estilos.  
+4️⃣ Copiar y pegar en `tailwind.config.js`.
