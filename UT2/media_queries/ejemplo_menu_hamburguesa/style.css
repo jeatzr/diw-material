@@ -1,0 +1,50 @@
+/* ----- Estilo base ----- */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #333;
+  color: white;
+  padding: 10px 20px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+}
+
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 24px;
+  color: white;
+  cursor: pointer;
+}
+
+/* ----- Responsive: a partir de este ancho cambiamos ----- */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block; /* mostrar el botón */
+  }
+
+  .nav-links {
+    display: none; /* ocultar los enlaces */
+    flex-direction: column;
+    position: absolute;
+    top: 40px;
+    right: 10px;
+    background: #333;
+    padding: 10px;
+  }
+
+  .nav-links.active {
+    display: flex; /* mostrar cuando está activo */
+  }
+}
