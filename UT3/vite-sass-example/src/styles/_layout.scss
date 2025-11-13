@@ -1,30 +1,46 @@
 @use "globals" as *;
 
 body {
-  // default color "huge"
-  background-color: $default-bg-color;
+  font-family: $font-family-base;
+  font-size: $font-size-base;
+  color: $color-text;
+  margin: 0;
+  padding: 0;
 
-  @include respond-to("large") {
-    background-color: $large-size-bg-color;
-  }
+  // 1️⃣ Base (móvil)
+  background-color: $color-bg-default;
 
-  @include respond-to("medium") {
-    background-color: $medium-size-bg-color;
-  }
-
+  // 2️⃣ Tablet
   @include respond-to("narrow") {
-    background-color: $narrow-size-bg-color;
+    background-color: $color-bg-narrow;
+  }
+
+  // 3️⃣ Escritorio mediano
+  @include respond-to("medium") {
+    background-color: $color-bg-medium;
+  }
+
+  // 4️⃣ Escritorio grande
+  @include respond-to("large") {
+    background-color: $color-bg-large;
   }
 }
 
 .container {
-  background-color: white;
-  height: 300px;
+  background-color: $color-surface;
+  overflow: hidden;
+  border-radius: $radius-lg;
+  width: 95%;
   max-width: 1200px;
-  margin: 0 auto; // Centrar contenido
-  padding: 0 1rem; // Espaciado interno lateral
+  margin: $space-sm auto;
+  padding: $space-sm;
+
+  @include respond-to("medium") {
+    width: 90%;
+    padding: $space-md;
+  }
 
   @include respond-to("large") {
-    width: 90%;
+    padding: $space-lg;
   }
 }

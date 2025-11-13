@@ -1,15 +1,19 @@
 @use "sass:map";
 @use "variables" as *;
 
-// Gestor simple de breakpoints.
 @mixin respond-to($breakpoint) {
-  $query: map.get($breakpoints, $breakpoint);
+  $value: map.get($breakpoints, $breakpoint);
 
-  @if $query {
-    @media (#{$query}) {
+  @if $value {
+    @media (min-width: $value) {
       @content;
     }
   } @else {
-    @error "No value found for `#{$breakpoint}` in the `$breakpoints` map.";
+    @warn "No existe el breakpoint `#{$breakpoint}` en el mapa de breakpoints.";
   }
+}
+
+@mixin boton($tipo)
+{
+  
 }

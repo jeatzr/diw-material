@@ -7,9 +7,43 @@
     <title>Vite App</title>
   </head>
   <body>
-    <div id="app">
-      <div class="container"></div>
+    <div class="container">
+      <header class="header">
+        <div class="logo">Mi sitio responsive</div>
+
+        <nav class="nav">
+          <button class="nav__toggle" aria-label="Abrir menú">☰</button>
+
+          <ul class="nav__menu">
+            <li><a href="#">Inicio</a></li>
+            <li><a href="#">Servicios</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">Contacto</a></li>
+          </ul>
+        </nav>
+      </header>
+
+      <main class="content">
+        <section class="card">
+          <h2>Artículo 1</h2>
+          <p>Contenido principal del artículo.</p>
+        </section>
+
+        <section class="card">
+          <h2>Artículo 2</h2>
+          <p>Más contenido que se adapta al ancho de la pantalla.</p>
+        </section>
+
+        <section class="card">
+          <h2>Artículo 3</h2>
+          <p>Diseño fluido y limpio con SASS y mixins.</p>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <p>© 2025 Mi web responsive</p>
+      </footer>
     </div>
-    <script type="module" src="/main.js"></script>
+    <script type="module" src="main.js"></script>
   </body>
 </html>

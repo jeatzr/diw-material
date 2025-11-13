@@ -1,0 +1,32 @@
+@use "globals" as *;
+
+.content {
+  display: grid;
+  gap: $space-sm;
+  margin-top: $space-sm;
+  grid-template-columns: 1fr;
+
+  @include respond-to("medium") {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include respond-to("large") {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.card {
+  background-color: $color-surface-alt;
+  padding: $space-sm;
+  border-radius: $radius-md;
+  border: 1px solid $color-border;
+  transition: transform 0.2s ease;
+
+  &:hover {
+    transform: translateY(-4px);
+  }
+
+  h2 {
+    color: $color-primary;
+  }
+}
