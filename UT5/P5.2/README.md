@@ -1,35 +1,57 @@
-# Práctica 5.2 : Implementación de Diseño en React Router con Tailwind
+# 📝 Práctica 5.1: Creación de un Sistema de Diseño e Implementación en React + Tailwind CSS
 
-## Objetivo
+## 🎯 Objetivo
 
-El objetivo de esta práctica es implementar un diseño proporcionado en Figma utilizando React Router, creando los componentes necesarios y asegurando la funcionalidad del modo noche utilizando Tailwind CSS.
+En esta práctica, los alumnos en grupo deberán transformar los **wireframes diseñados en una en la práctica 4.1r** en un **sistema de diseño bien estructurado** en Figma. Luego, deberán **exportar los estilos** a un proyecto en React con TypeScript, utilizando Tailwind CSS para la estilización.
 
-## Requisitos
+## 📌 Requisitos de la práctica
 
-1. **Diseño en Figma**: Los alumnos deberán replicar el diseño proporcionado en Figma.
-2. **Componentes en React**: Deberán crear los componentes necesarios basados en el diseño.
-3. **Modo Noche**: Implementar un modo noche que cambie automáticamente según la preferencia del sistema o de manera manual por el usuario.
-4. **Responsividad**: El diseño debe ser completamente responsivo utilizando Tailwind CSS.
-5. **Sistema de Grid**: Utilizar el sistema de grid de Tailwind para organizar el contenido según el prototipo.
+1️⃣ **Definir el Sistema de Diseño en Figma**:
 
-## Entregables
+- **Fuentes y tipografías**: Primaria, secundaria, tamaños de títulos y párrafos.
+- **Paleta de colores**: Definir colores primarios, secundarios y de estado (hover, focus, disabled).
+- **Componentes básicos**: Botones, Inputs, Cards, Barra de navegación, Footer, etc. (al menos 5)
 
-- Código fuente de la aplicación en un repositorio de Git.
-- Documentación sobre cómo ejecutar la aplicación y cualquier configuración necesaria.
+2️⃣ **Exportar el Sistema de Diseño a Tailwind CSS**:
 
-## Materiales
+- Convertir la paleta de colores en **variables exportables** en un formato válido.
+- **Configurar `tailwind.config.js`** con los valores definidos en Figma.
+- Personalizar fuentes y tamaños dentro del archivo de configuración de Tailwind si fuese necesario.
 
-- [Repositorio de git con la gestión de DarkMode](https://github.com/jeatzr/dark-mode-on-ssr-rr)
-- [Prototipo de Figma](https://www.figma.com/design/G40Up8aSNvLloXVoi9F1uj/Dark-Mode?node-id=0-18&t=0f4tXEpYE0hBgRAi-1)
+3️⃣ **Implementar los Componentes en React con TypeScript**:
 
-## Rúbrica de Evaluación
+- **Crear cada componente** basado en el diseño de Figma.
+- **Usar Tailwind CSS** para la estilización.
+- Definir **variantes** (ej. botones primarios/secundarios, inputs con error, etc.).
+- **Estructurar correctamente el código** para que los componentes sean reutilizables.
 
-| Criterios                       | Excelente (20-25)                                                                                              | Bueno (15-19)                                                                              | Aceptable (10-14)                                                                            | Insuficiente (0-9)                                | Puntos |
-| ------------------------------- | -------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------ | -------------------------------------------------------------------------------------------- | ------------------------------------------------- | ------ |
-| **Implementación del Diseño**   | El diseño es fiel al prototipo y es completamente funcional.                                                   | El diseño es mayormente fiel al prototipo con algunos detalles menores faltantes.          | El diseño tiene varias discrepancias con el prototipo.                                       | El diseño no se asemeja al prototipo.             | /25    |
-| **Modo Noche**                  | Implementación perfecta del modo noche, cambia correctamente según las preferencias del sistema y manualmente. | Implementación adecuada del modo noche, pero puede tener un pequeño error.                 | Implementación incompleta del modo noche, presenta problemas funcionales.                    | El modo noche no está implementado.               | /25    |
-| **Responsividad**               | El diseño es completamente responsivo y se adapta a todas las pantallas sin problemas.                         | La mayoría del diseño es responsivo, pero presenta algunos problemas en ciertas pantallas. | Algunos elementos no son responsivos y afectan la usabilidad.                                | El diseño no es responsivo.                       | /20    |
-| **Uso de Tailwind y Grid**      | Uso excelente de Tailwind CSS y el sistema de grid para organizar el contenido.                                | Uso adecuado de Tailwind CSS y el sistema de grid, pero puede mejorar en algunos aspectos. | Uso limitado de Tailwind CSS y el sistema de grid, sin aprovechar al máximo sus capacidades. | No se utilizó Tailwind CSS ni el sistema de grid. | /15    |
-| **Documentación y Comentarios** | Documentación clara y completa con comentarios en el código.                                                   | Documentación adecuada y comentarios en la mayoría del código.                             | Documentación insuficiente y pocos comentarios en el código.                                 | No hay documentación ni comentarios en el código. | /15    |
+4️⃣ **Presentación del Sistema de Diseño**:
 
-**Total de puntos: /100**
+- Explicar las decisiones tomadas en la selección de fuentes, colores y componentes en el fichero `README.md` del repositorio.
+- Mostrar cómo se implementaron los valores en `tailwind.config.js`.
+- Justificar la estructura y el uso de cada componente creado en React.
+
+---
+
+## 📅 **Entrega**
+
+- La práctica debe subirse a un repositorio en **GitHub** y compartir el enlace.
+- Se deben incluir capturas del diseño en Figma y del código de Tailwind, así como el enlace al sistema de diseño de Figma.
+
+---
+
+# ✅ **Rúbrica de Evaluación (100 Pts)**
+
+| **Criterio**                                                | **Ponderación** |
+| ----------------------------------------------------------- | --------------- |
+| 📌 **1. Sistema de Diseño en Figma**                        | **20 pts**      |
+| 📌 **2. Elección de fuentes y tipografías**                 | **5 pts**       |
+| 📌 **3. Definición de la paleta de colores**                | **5 pts**       |
+| 📌 **4. Identificación y diseño de componentes**            | **5 pts**       |
+| 📌 **5. Exportación correcta de estilos a Tailwind CSS**    | **5 pts**       |
+| 📌 **6. Implementación de componentes en React + Tailwind** | **30 pts**      |
+| 📌 **7. Uso de variantes y estados en componentes**         | **10 pts**      |
+| 📌 **8. Organización y estructura del código**              | **10 pts**      |
+| 📌 **9. Documentación en `README.md`**                      | **10 pts**      |
+
+🔥 **Puntuación Final: \_\_\_\_/100**

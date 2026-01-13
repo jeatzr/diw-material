@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Acuario con Peces</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Acuario Virtual</h1>
+      <p>Disfruta de un relajante acuario en tu pantalla.</p>
+      <!-- Video.js CSS y JS -->
+      <link href="https://vjs.zencdn.net/8.0.4/video-js.css" rel="stylesheet" />
+    </header>
+
+    <video
+      id="my-video"
+      class="video-js vjs-default-skin"
+      controls
+      preload="auto"
+      width="800"
+      height="450"
+      data-setup="{}"
+    ></video>
+
+    <script src="https://vjs.zencdn.net/8.0.4/video.min.js"></script>
+
+    <!-- Plugin para selector de calidad -->
+    <script src="https://cdn.jsdelivr.net/npm/videojs-http-source-selector@1.1.5/dist/videojs-http-source-selector.min.js"></script>
+    <script>
+      const player = videojs("my-video", {
+        controls: true,
+        fluid: true,
+        playbackRates: [0.5, 1, 1.5, 2],
+        techOrder: ["html5"],
+        sources: [
+          {
+            src: "aquarium-480p.mp4",
+            type: "video/mp4",
+            label: "480p",
+            res: 480,
+          },
+          {
+            src: "aquarium-720p.mp4",
+            type: "video/mp4",
+            label: "720p",
+            res: 720,
+          },
+          {
+            src: "video-1080p.mp4",
+            type: "video/mp4",
+            label: "1080p",
+            res: 1080,
+          },
+          { src: "video-4k.mp4", type: "video/mp4", label: "4k", res: 2160 },
+        ],
+      });
+
+      // Inicializar plugin de selector de calidad
+      player.httpSourceSelector();
+    </script>
+
+    <footer>
+      <p>&copy; 2025 Acuario Virtual. Todos los derechos reservados.</p>
+    </footer>
+  </body>
+</html>

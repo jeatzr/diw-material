@@ -1,57 +1,134 @@
-# 📝 Práctica 5.1: Creación de un Sistema de Diseño e Implementación en React + Tailwind CSS
+# Práctica: Estilado de componentes React con Tailwind CSS
 
-## 🎯 Objetivo
+## Objetivo
 
-En esta práctica, los alumnos en grupo deberán transformar los **wireframes diseñados en una en la práctica 4.1r** en un **sistema de diseño bien estructurado** en Figma. Luego, deberán **exportar los estilos** a un proyecto en React con TypeScript, utilizando Tailwind CSS para la estilización.
-
-## 📌 Requisitos de la práctica
-
-1️⃣ **Definir el Sistema de Diseño en Figma**:
-
-- **Fuentes y tipografías**: Primaria, secundaria, tamaños de títulos y párrafos.
-- **Paleta de colores**: Definir colores primarios, secundarios y de estado (hover, focus, disabled).
-- **Componentes básicos**: Botones, Inputs, Cards, Barra de navegación, Footer, etc. (al menos 5)
-
-2️⃣ **Exportar el Sistema de Diseño a Tailwind CSS**:
-
-- Convertir la paleta de colores en **variables exportables** en un formato válido.
-- **Configurar `tailwind.config.js`** con los valores definidos en Figma.
-- Personalizar fuentes y tamaños dentro del archivo de configuración de Tailwind si fuese necesario.
-
-3️⃣ **Implementar los Componentes en React con TypeScript**:
-
-- **Crear cada componente** basado en el diseño de Figma.
-- **Usar Tailwind CSS** para la estilización.
-- Definir **variantes** (ej. botones primarios/secundarios, inputs con error, etc.).
-- **Estructurar correctamente el código** para que los componentes sean reutilizables.
-
-4️⃣ **Presentación del Sistema de Diseño**:
-
-- Explicar las decisiones tomadas en la selección de fuentes, colores y componentes en el fichero `README.md` del repositorio.
-- Mostrar cómo se implementaron los valores en `tailwind.config.js`.
-- Justificar la estructura y el uso de cada componente creado en React.
+El objetivo de esta práctica es que el alumnado aprenda a **estilar distintos componentes de React utilizando Tailwind CSS**, comprendiendo el uso de clases utilitarias, estados (`hover`, `focus`, `disabled`), diseño responsive y coherencia visual entre componentes.
 
 ---
 
-## 📅 **Entrega**
+## Contexto
 
-- La práctica debe subirse a un repositorio en **GitHub** y compartir el enlace.
-- Se deben incluir capturas del diseño en Figma y del código de Tailwind, así como el enlace al sistema de diseño de Figma.
+Dispones de una aplicación React ya creada (por ejemplo con Vite o Create React App) que **ya tiene Tailwind CSS configurado**.
+
+La práctica se centra **exclusivamente en el estilado**, no en la lógica compleja.
+
+La aplicación representa un pequeño **panel de usuario**.
 
 ---
 
-# ✅ **Rúbrica de Evaluación (100 Pts)**
+## Componentes a estilar
 
-| **Criterio**                                                | **Ponderación** |
-| ----------------------------------------------------------- | --------------- |
-| 📌 **1. Sistema de Diseño en Figma**                        | **20 pts**      |
-| 📌 **2. Elección de fuentes y tipografías**                 | **5 pts**       |
-| 📌 **3. Definición de la paleta de colores**                | **5 pts**       |
-| 📌 **4. Identificación y diseño de componentes**            | **5 pts**       |
-| 📌 **5. Exportación correcta de estilos a Tailwind CSS**    | **5 pts**       |
-| 📌 **6. Implementación de componentes en React + Tailwind** | **30 pts**      |
-| 📌 **7. Uso de variantes y estados en componentes**         | **10 pts**      |
-| 📌 **8. Organización y estructura del código**              | **10 pts**      |
-| 📌 **9. Documentación en `README.md`**                      | **10 pts**      |
+### 1. Botón reutilizable (`Button.jsx`)
 
-🔥 **Puntuación Final: \_\_\_\_/100**
+Crea y estila un componente botón reutilizable que acepte las siguientes variantes mediante props:
+
+- `variant="primary"`
+- `variant="secondary"`
+- `variant="danger"`
+
+#### Requisitos de estilo
+
+- Bordes redondeados
+- Diferente color de fondo según la variante
+- Efecto `hover`
+- Efecto `focus` accesible
+- Estado `disabled` visible
+
+---
+
+### 2. Tarjeta de usuario (`UserCard.jsx`)
+
+Componente que muestra la información de un usuario:
+
+- Avatar
+- Nombre
+- Email
+- Botón de acción
+
+#### Requisitos de estilo
+
+- Diseño tipo _card_
+- Sombra suave
+- Padding consistente
+- Uso de Flexbox para alineación
+- Diseño responsive:
+  - Columna en móvil
+  - Fila en pantallas grandes
+
+---
+
+### 3. Formulario de login (`LoginForm.jsx`)
+
+Formulario con:
+
+- Input de email
+- Input de contraseña
+- Botón de envío
+
+#### Requisitos de estilo
+
+- Inputs con borde y `focus` visible
+- Espaciado vertical adecuado
+- Mensaje de error simulado (solo visual)
+- Botón alineado correctamente
+
+---
+
+### 4. Barra de navegación (`Navbar.jsx`)
+
+Barra de navegación superior con:
+
+- Logo o nombre de la aplicación
+- Enlaces de navegación
+
+#### Requisitos de estilo
+
+- Fondo fijo
+- Distribución con Flexbox
+- Enlaces con efecto `hover`
+- Diseño responsive (menú horizontal)
+
+---
+
+## Requisitos generales
+
+- Usar **exclusivamente Tailwind CSS**
+- No usar archivos CSS tradicionales
+- Evitar repetir clases innecesarias
+- Mantener coherencia visual entre componentes
+- Usar clases responsive (`sm`, `md`, `lg`)
+- Código limpio y bien organizado
+
+---
+
+## Entregables
+
+- Repositorio con el proyecto
+- Componentes correctamente estilados
+- Archivo `README.md` breve explicando:
+  - Decisiones de diseño
+  - Componentes reutilizables creados
+
+---
+
+## Criterios de evaluación
+
+| Criterio                         | Puntuación |
+| -------------------------------- | ---------- |
+| Uso correcto de Tailwind CSS     | 30%        |
+| Estados (hover, focus, disabled) | 20%        |
+| Diseño responsive                | 20%        |
+| Coherencia visual                | 20%        |
+| Organización del código          | 10%        |
+
+---
+
+## Extra (opcional)
+
+- Implementar modo oscuro con Tailwind
+- Añadir animaciones suaves (`transition`, `duration`)
+- Uso de `clsx`, `classnames` o similar para manejar variantes
+
+---
+
+💡 **Consejo:** piensa los componentes como piezas reutilizables, no como estilos aislados.
