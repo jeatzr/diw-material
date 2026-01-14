@@ -92,6 +92,7 @@ Barra de navegación superior con:
 
 ## Requisitos generales
 
+- Crear un prototipo en **Figma** con los compomnentes a estilar manteniendo coherencia entre los componentes.
 - Usar **exclusivamente Tailwind CSS**
 - No usar archivos CSS tradicionales
 - Evitar repetir clases innecesarias
@@ -103,11 +104,12 @@ Barra de navegación superior con:
 
 ## Entregables
 
-- Repositorio con el proyecto
+- Repositorio con el proyecto.
 - Componentes correctamente estilados
 - Archivo `README.md` breve explicando:
   - Decisiones de diseño
   - Componentes reutilizables creados
+  - Enlace a Figma
 
 ---
 
@@ -118,7 +120,7 @@ Barra de navegación superior con:
 | Uso correcto de Tailwind CSS     | 30%        |
 | Estados (hover, focus, disabled) | 20%        |
 | Diseño responsive                | 20%        |
-| Coherencia visual                | 20%        |
+| Coherencia visual y Figma        | 20%        |
 | Organización del código          | 10%        |
 
 ---
