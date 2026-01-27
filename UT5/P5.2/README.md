@@ -2,7 +2,7 @@
 
 ## 🎯 Objetivo
 
-En esta práctica, los alumnos en grupo deberán transformar los **wireframes diseñados en una en la práctica 4.1r** en un **sistema de diseño bien estructurado** en Figma. Luego, deberán **exportar los estilos** a un proyecto en React con TypeScript, utilizando Tailwind CSS para la estilización.
+En esta práctica, los **alumnos en grupo** deberán transformar los **wireframes diseñados en una en la práctica 4.1r** en un **sistema de diseño bien estructurado** en Figma. Luego, deberán **exportar los estilos** a un proyecto en React con TypeScript, utilizando Tailwind CSS para la estilización.
 
 ## 📌 Requisitos de la práctica
 
