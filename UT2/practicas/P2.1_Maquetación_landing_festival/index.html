@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Festival Marea · Layout con Flexbox y Grid</title>
+
+  <!-- 1º las variables y el reset, 2º vuestros estilos -->
+  <link rel="stylesheet" href="variables.css">
+  <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+
+  <!-- ============ 1. CABECERA ============ -->
+  <header class="cabecera">
+    <div class="contenedor cabecera__interior">
+      <a href="#" class="logo">Marea</a>
+
+      <nav class="menu" aria-label="Principal">
+        <ul class="menu__lista">
+          <li><a href="#cartel" class="menu__enlace">Cartel</a></li>
+          <li><a href="#escenarios" class="menu__enlace">Escenarios</a></li>
+          <li><a href="#entradas" class="menu__enlace">Entradas</a></li>
+          <li><a href="#info" class="menu__enlace">Cómo llegar</a></li>
+        </ul>
+      </nav>
+
+      <a href="#entradas" class="boton boton--sol">Comprar entradas</a>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ============ 2. HERO ============ -->
+    <section class="hero">
+      <div class="contenedor hero__interior">
+        <h1 class="hero__titulo">Tres noches frente al mar</h1>
+        <p class="hero__texto">
+          Música en directo, cocina de puesto y amanecer en la playa.
+          Del 17 al 19 de julio, con cinco escenarios y 40 artistas.
+        </p>
+        <div class="hero__acciones">
+          <a href="#entradas" class="boton boton--sol">Ver entradas</a>
+          <a href="#cartel" class="boton boton--borde">Ver el cartel</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 3. DATOS CLAVE ============ -->
+    <section class="datos">
+      <div class="contenedor">
+        <ul class="datos__lista">
+          <li class="dato">
+            <strong class="dato__valor">3 noches</strong>
+            <span class="dato__etiqueta">17, 18 y 19 de julio</span>
+          </li>
+          <li class="dato">
+            <strong class="dato__valor">5 escenarios</strong>
+            <span class="dato__etiqueta">de la playa al pinar</span>
+          </li>
+          <li class="dato">
+            <strong class="dato__valor">40 artistas</strong>
+            <span class="dato__etiqueta">12 estrenos en España</span>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============ 4. CARTEL (tarjetas) ============ -->
+    <section class="cartel" id="cartel">
+      <div class="contenedor">
+        <h2 class="seccion__titulo">Cartel destacado</h2>
+
+        <div class="cartel__rejilla">
+
+          <article class="tarjeta">
+            <div class="tarjeta__imagen" aria-hidden="true"></div>
+            <div class="tarjeta__cuerpo">
+              <h3 class="tarjeta__titulo">Lola Brisa</h3>
+              <p class="tarjeta__estilo">Pop electrónico</p>
+              <p class="tarjeta__texto">
+                Sintetizadores cálidos y letras en tres idiomas. Cierra la primera noche.
+              </p>
+              <a href="#" class="boton boton--oscuro tarjeta__boton">Viernes · 23:30</a>
+            </div>
+          </article>
+
+          <article class="tarjeta">
+            <div class="tarjeta__imagen" aria-hidden="true"></div>
+            <div class="tarjeta__cuerpo">
+              <h3 class="tarjeta__titulo">Los Faros</h3>
+              <p class="tarjeta__estilo">Indie rock</p>
+              <p class="tarjeta__texto">
+                Guitarras limpias y coros que se cantan solos.
+              </p>
+              <a href="#" class="boton boton--oscuro tarjeta__boton">Viernes · 21:00</a>
+            </div>
+          </article>
+
+          <article class="tarjeta">
+            <div class="tarjeta__imagen" aria-hidden="true"></div>
+            <div class="tarjeta__cuerpo">
+              <h3 class="tarjeta__titulo">Orquesta del Estrecho</h3>
+              <p class="tarjeta__estilo">Fusión mediterránea</p>
+              <p class="tarjeta__texto">
+                Catorce músicos, metales, percusión y una tarde entera de baile en la arena.
+              </p>
+              <a href="#" class="boton boton--oscuro tarjeta__boton">Sábado · 19:00</a>
+            </div>
+          </article>
+
+          <article class="tarjeta">
+            <div class="tarjeta__imagen" aria-hidden="true"></div>
+            <div class="tarjeta__cuerpo">
+              <h3 class="tarjeta__titulo">Nube</h3>
+              <p class="tarjeta__estilo">Ambient</p>
+              <p class="tarjeta__texto">
+                Sesión al amanecer.
+              </p>
+              <a href="#" class="boton boton--oscuro tarjeta__boton">Sábado · 07:00</a>
+            </div>
+          </article>
+
+          <article class="tarjeta">
+            <div class="tarjeta__imagen" aria-hidden="true"></div>
+            <div class="tarjeta__cuerpo">
+              <h3 class="tarjeta__titulo">Mar de Fondo</h3>
+              <p class="tarjeta__estilo">Hip hop</p>
+              <p class="tarjeta__texto">
+                Rimas afiladas y bases de jazz. Su único concierto del verano en la costa.
+              </p>
+              <a href="#" class="boton boton--oscuro tarjeta__boton">Domingo · 22:00</a>
+            </div>
+          </article>
+
+          <article class="tarjeta">
+            <div class="tarjeta__imagen" aria-hidden="true"></div>
+            <div class="tarjeta__cuerpo">
+              <h3 class="tarjeta__titulo">DJ Salitre</h3>
+              <p class="tarjeta__estilo">House</p>
+              <p class="tarjeta__texto">
+                Cierre del festival con cuatro horas seguidas de pista.
+              </p>
+              <a href="#" class="boton boton--oscuro tarjeta__boton">Domingo · 01:00</a>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 5. ESCENARIOS (bloques alternos) ============ -->
+    <section class="escenarios" id="escenarios">
+      <div class="contenedor">
+        <h2 class="seccion__titulo">Cinco escenarios, cinco ambientes</h2>
+
+        <div class="bloque">
+          <div class="bloque__texto">
+            <h3 class="bloque__titulo">Escenario Playa</h3>
+            <p>
+              El principal. Frente al mar, con aforo para 8.000 personas y
+              las puestas de sol más fotografiadas del verano.
+            </p>
+            <a href="#" class="boton boton--ola">Ver horarios</a>
+          </div>
+          <div class="bloque__visual bloque__visual--playa" aria-hidden="true"></div>
+        </div>
+
+        <div class="bloque bloque--inverso">
+          <div class="bloque__texto">
+            <h3 class="bloque__titulo">Escenario Pinar</h3>
+            <p>
+              Sombra, suelo de tierra y sesiones acústicas. Aquí se escucha
+              mejor y se habla más bajo.
+            </p>
+            <a href="#" class="boton boton--ola">Ver horarios</a>
+          </div>
+          <div class="bloque__visual bloque__visual--pinar" aria-hidden="true"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 6. ENTRADAS (planes) ============ -->
+    <section class="entradas" id="entradas">
+      <div class="contenedor">
+        <h2 class="seccion__titulo">Elige tu entrada</h2>
+
+        <div class="planes">
+
+          <article class="plan">
+            <h3 class="plan__nombre">Una noche</h3>
+            <p class="plan__precio">45 €</p>
+            <ul class="plan__lista">
+              <li>Acceso a un día a elegir</li>
+              <li>Zona de comida</li>
+            </ul>
+            <a href="#" class="boton boton--oscuro plan__boton">Comprar</a>
+          </article>
+
+          <article class="plan plan--destacado">
+            <p class="plan__etiqueta">Más vendida</p>
+            <h3 class="plan__nombre">Abono 3 noches</h3>
+            <p class="plan__precio">110 €</p>
+            <ul class="plan__lista">
+              <li>Acceso a los tres días</li>
+              <li>Zona de comida</li>
+              <li>Zona de descanso con sombra</li>
+              <li>Camiseta del festival</li>
+            </ul>
+            <a href="#" class="boton boton--sol plan__boton">Comprar</a>
+          </article>
+
+          <article class="plan">
+            <h3 class="plan__nombre">Abono + camping</h3>
+            <p class="plan__precio">160 €</p>
+            <ul class="plan__lista">
+              <li>Acceso a los tres días</li>
+              <li>Parcela de camping</li>
+            </ul>
+            <a href="#" class="boton boton--oscuro plan__boton">Comprar</a>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============ 7. PIE DE PÁGINA ============ -->
+  <footer class="pie" id="info">
+    <div class="contenedor pie__interior">
+
+      <div class="pie__columna pie__columna--marca">
+        <a href="#" class="logo">Marea</a>
+        <p>Festival de música frente al mar.</p>
+      </div>
+
+      <div class="pie__columna">
+        <h3 class="pie__titulo">Festival</h3>
+        <ul class="pie__lista">
+          <li><a href="#cartel">Cartel</a></li>
+          <li><a href="#escenarios">Escenarios</a></li>
+          <li><a href="#entradas">Entradas</a></li>
+        </ul>
+      </div>
+
+      <div class="pie__columna">
+        <h3 class="pie__titulo">Cómo llegar</h3>
+        <ul class="pie__lista">
+          <li><a href="#">En autobús</a></li>
+          <li><a href="#">En coche</a></li>
+          <li><a href="#">Aparcamiento</a></li>
+        </ul>
+      </div>
+
+      <div class="pie__columna">
+        <h3 class="pie__titulo">Contacto</h3>
+        <ul class="pie__lista">
+          <li><a href="#">hola@festivalmarea.example</a></li>
+          <li><a href="#">Prensa</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="pie__legal">
+      <div class="contenedor pie__legal-interior">
+        <p>© 2026 Festival Marea</p>
+        <p><a href="#">Privacidad</a> · <a href="#">Cookies</a></p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

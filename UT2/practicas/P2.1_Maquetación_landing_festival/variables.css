@@ -1,0 +1,117 @@
+/* =========================================================
+   variables.css  ·  Festival Marea
+   Tokens de diseño + reset mínimo.
+   NO es necesario modificar este archivo: úsalo con var(--nombre)
+   ========================================================= */
+
+:root {
+  /* ---------- Color ---------- */
+  --color-fondo: #f2f6f7; /* fondo de página */
+  --color-superficie: #ffffff; /* tarjetas, cajas */
+  --color-tinta: #14213d; /* texto principal y fondos oscuros */
+  --color-tinta-suave: #4a5878; /* texto secundario */
+  --color-sol: #fcbf49; /* acento principal (botones, destacados) */
+  --color-ola: #2a9d8f; /* acento secundario */
+  --color-coral: #ef476f; /* acento de alerta / oferta */
+  --color-borde: #d5dee3;
+
+  /* ---------- Tipografía ---------- */
+  --fuente-titulo: "Trebuchet MS", "Segoe UI", system-ui, sans-serif;
+  --fuente-texto: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+
+  --texto-xs: 0.8rem;
+  --texto-s: 0.9rem;
+  --texto-m: 1rem;
+  --texto-l: 1.25rem;
+  --texto-xl: 1.75rem;
+  --texto-2xl: 2.5rem;
+  --texto-3xl: clamp(2.5rem, 7vw, 4.5rem); /* título del hero */
+
+  --peso-normal: 400;
+  --peso-fuerte: 700;
+  --peso-negro: 800;
+
+  /* ---------- Espaciado (escala de 8px) ---------- */
+  --espacio-1: 0.25rem;
+  --espacio-2: 0.5rem;
+  --espacio-3: 1rem;
+  --espacio-4: 1.5rem;
+  --espacio-5: 2rem;
+  --espacio-6: 3rem;
+  --espacio-7: 4.5rem;
+  --espacio-8: 6rem;
+
+  /* ---------- Forma ---------- */
+  --radio-s: 6px;
+  --radio-m: 14px;
+  --radio-pildora: 999px;
+
+  --sombra-suave: 0 2px 8px rgba(20, 33, 61, 0.08);
+  --sombra-fuerte: 0 12px 32px rgba(20, 33, 61, 0.18);
+
+  /* ---------- Layout ---------- */
+  --ancho-contenedor: 1100px;
+  --alto-cabecera: 72px;
+
+  /* ---------- Movimiento ---------- */
+  --transicion: 180ms ease;
+}
+
+/* Nota: las variables CSS NO funcionan dentro de @media (...).
+   Puntos de ruptura de la práctica:
+     móvil   → hasta 639px
+     tablet  → desde 640px
+     escritorio → desde 960px                                   */
+
+/* ---------- Reset mínimo ---------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 100%;
+}
+
+body {
+  font-family: var(--fuente-texto);
+  font-size: var(--texto-m);
+  line-height: 1.6;
+  color: var(--color-tinta);
+  background: var(--color-fondo);
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--fuente-titulo);
+  line-height: 1.15;
+}
+
+button {
+  font: inherit;
+  cursor: pointer;
+  border: 0;
+}
+
+:focus-visible {
+  outline: 3px solid var(--color-ola);
+  outline-offset: 2px;
+}
