@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
+    <title>Modo oscuro con control total (data-theme)</title>
+    <script>
+      try {
+        var t = localStorage.getItem("tema");
+        if (t) document.documentElement.dataset.theme = t;
+      } catch (e) {}
+    </script>
+    <style>
+      :root {
+        box-sizing: border-box;
+        padding-top: env(safe-area-inset-top, 0px);
+        padding-bottom: env(safe-area-inset-bottom, 0px);
+        color-scheme: light dark;
+        --color-gris-100: #f2f6f7;
+        --color-tinta-100: #c9d3e6;
+        --color-tinta-900: #14213d;
+        --color-fondo: var(--color-gris-100, #f2f6f7);
+        --color-texto-principal: var(--color-tinta-900, #14213d);
+        --color-tarjeta: #ffffff;
+        --color-borde: #d5dde0;
+        --color-acento: #2450d6;
+        --color-boton-texto: #ffffff;
+      }
+      @media (prefers-color-scheme: dark) {
+        :root:not([data-theme="light"]) {
+          --color-fondo: var(--color-tinta-900, #14213d);
+          --color-texto-principal: var(--color-tinta-100, #c9d3e6);
+          --color-tarjeta: #1c2b4d;
+          --color-borde: #2c3d66;
+          --color-acento: #8fa9ff;
+          --color-boton-texto: #14213d;
+        }
+      }
+      :root[data-theme="dark"] {
+        color-scheme: dark;
+        --color-fondo: var(--color-tinta-900, #14213d);
+        --color-texto-principal: var(--color-tinta-100, #c9d3e6);
+        --color-tarjeta: #1c2b4d;
+        --color-borde: #2c3d66;
+        --color-acento: #8fa9ff;
+        --color-boton-texto: #14213d;
+      }
+      :root[data-theme="light"] {
+        color-scheme: light;
+      }
+      html {
+        scroll-padding-top: env(safe-area-inset-top, 0px);
+      }
+      body {
+        margin: 0;
+        background: var(--color-fondo);
+        color: var(--color-texto-principal);
+        font:
+          1.05rem/1.6 system-ui,
+          -apple-system,
+          "Segoe UI",
+          sans-serif;
+      }
+      main {
+        max-width: 42rem;
+        margin: 0 auto;
+        padding: 2.5rem 1.25rem;
+      }
+      h1 {
+        font-size: 2rem;
+        margin: 0 0 0.5rem;
+      }
+      .card {
+        background: var(--color-tarjeta);
+        border: 1px solid var(--color-borde);
+        border-radius: 12px;
+        padding: 1.25rem;
+        margin: 1.25rem 0;
+      }
+      .selector {
+        display: inline-flex;
+        gap: 0.25rem;
+        padding: 0.25rem;
+        margin: 1.25rem 0;
+        background: var(--color-tarjeta);
+        border: 1px solid var(--color-borde);
+        border-radius: 999px;
+      }
+      .selector button {
+        display: grid;
+        place-items: center;
+        width: 2.5rem;
+        height: 2.5rem;
+        padding: 0;
+        border: 0;
+        border-radius: 999px;
+        background: transparent;
+        color: var(--color-texto-principal);
+        cursor: pointer;
+      }
+      .selector button:hover {
+        background: var(--color-fondo);
+      }
+      .selector button[aria-pressed="true"] {
+        background: var(--color-acento);
+        color: var(--color-boton-texto);
+      }
+      .selector button:focus-visible {
+        outline: 2px solid var(--color-acento);
+        outline-offset: 2px;
+      }
+      .selector svg {
+        width: 1.25rem;
+        height: 1.25rem;
+        fill: none;
+        stroke: currentColor;
+        stroke-width: 2;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+      }
+      code {
+        background: var(--color-fondo);
+        border: 1px solid var(--color-borde);
+        padding: 0.1em 0.4em;
+        border-radius: 6px;
+        font-size: 0.9em;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>Modo oscuro con control total</h1>
+      <p>
+        Por defecto sigue a tu sistema, pero puedes forzar el tema con el botón.
+        Tu elección se recuerda.
+      </p>
+      <div class="selector" role="group" aria-label="Tema">
+        <button
+          type="button"
+          data-tema="light"
+          aria-label="Tema claro"
+          title="Claro"
+        >
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <circle cx="12" cy="12" r="4" />
+            <path d="M12 2v2" />
+            <path d="M12 20v2" />
+            <path d="m4.93 4.93 1.41 1.41" />
+            <path d="m17.66 17.66 1.41 1.41" />
+            <path d="M2 12h2" />
+            <path d="M20 12h2" />
+            <path d="m6.34 17.66-1.41 1.41" />
+            <path d="m19.07 4.93-1.41 1.41" />
+          </svg>
+        </button>
+        <button
+          type="button"
+          data-tema="dark"
+          aria-label="Tema oscuro"
+          title="Oscuro"
+        >
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z" />
+          </svg>
+        </button>
+        <button
+          type="button"
+          data-tema="system"
+          aria-label="Tema del sistema"
+          title="Automático"
+        >
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <rect width="20" height="14" x="2" y="3" rx="2" />
+            <line x1="8" x2="16" y1="21" y2="21" />
+            <line x1="12" x2="12" y1="17" y2="21" />
+          </svg>
+        </button>
+      </div>
+      <div class="card">
+        <strong>Tema actual: <span id="estado"></span></strong>
+        <p>
+          Mira el atributo <code>data-theme</code> en el elemento
+          <code>&lt;html&gt;</code>: cambia al pulsar el botón.
+        </p>
+      </div>
+    </main>
+    <script>
+      const root = document.documentElement;
+      const estado = document.getElementById("estado");
+      const oscuroSistema = matchMedia("(prefers-color-scheme: dark)");
+      function temaActual() {
+        return root.dataset.theme || (oscuroSistema.matches ? "dark" : "light");
+      }
+      const botones = document.querySelectorAll(".selector button");
+      function pintar() {
+        const elegido = root.dataset.theme || "system";
+        const modo = root.dataset.theme ? "elegido por ti" : "del sistema";
+        estado.textContent =
+          (temaActual() === "dark" ? "oscuro" : "claro") + " (" + modo + ")";
+        botones.forEach((b) =>
+          b.setAttribute("aria-pressed", String(b.dataset.tema === elegido)),
+        );
+      }
+      botones.forEach((b) =>
+        b.addEventListener("click", () => {
+          const t = b.dataset.tema;
+          if (t === "system") {
+            delete root.dataset.theme;
+            try {
+              localStorage.removeItem("tema");
+            } catch (e) {}
+          } else {
+            root.dataset.theme = t;
+            try {
+              localStorage.setItem("tema", t);
+            } catch (e) {}
+          }
+          pintar();
+        }),
+      );
+      oscuroSistema.addEventListener("change", pintar);
+      pintar();
+    </script>
+  </body>
+</html>

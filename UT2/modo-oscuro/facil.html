@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
+    <title>Modo oscuro fácil (@media)</title>
+    <style>
+      :root {
+        box-sizing: border-box;
+        padding-top: env(safe-area-inset-top, 0px);
+        padding-bottom: env(safe-area-inset-bottom, 0px);
+        color-scheme: light dark;
+        --color-gris-100: #f2f6f7;
+        --color-tinta-100: #c9d3e6;
+        --color-tinta-900: #14213d;
+        --color-acento-base: #3366ff;
+        --color-fondo: var(--color-gris-100, #f2f6f7);
+        --color-texto-principal: var(--color-tinta-900, #14213d);
+        --color-tarjeta: #ffffff;
+        --color-borde: #d5dde0;
+        --color-acento: #2450d6;
+      }
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --color-fondo: var(--color-tinta-900, #14213d);
+          --color-texto-principal: var(--color-tinta-100, #c9d3e6);
+          --color-tarjeta: #1c2b4d;
+          --color-borde: #2c3d66;
+          --color-acento: #8fa9ff;
+        }
+      }
+      html {
+        scroll-padding-top: env(safe-area-inset-top, 0px);
+      }
+      body {
+        margin: 0;
+        background: var(--color-fondo);
+        color: var(--color-texto-principal);
+        font:
+          1.05rem/1.6 system-ui,
+          -apple-system,
+          "Segoe UI",
+          sans-serif;
+      }
+      main {
+        max-width: 42rem;
+        margin: 0 auto;
+        padding: 2.5rem 1.25rem;
+      }
+      h1 {
+        font-size: 2rem;
+        margin: 0 0 0.5rem;
+      }
+      .card {
+        background: var(--color-tarjeta);
+        border: 1px solid var(--color-borde);
+        border-radius: 12px;
+        padding: 1.25rem;
+        margin: 1.25rem 0;
+      }
+      a {
+        color: var(--color-acento);
+      }
+      code {
+        background: var(--color-fondo);
+        border: 1px solid var(--color-borde);
+        padding: 0.1em 0.4em;
+        border-radius: 6px;
+        font-size: 0.9em;
+      }
+      pre {
+        overflow-x: auto;
+        background: var(--color-tarjeta);
+        border: 1px solid var(--color-borde);
+        border-radius: 12px;
+        padding: 1rem;
+        font-size: 0.85rem;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>Modo oscuro fácil</h1>
+      <p>
+        Esta página cambia sola según el tema de tu sistema. No tiene JavaScript
+        ni botón.
+      </p>
+      <div class="card">
+        <strong>¿Cómo probarlo?</strong>
+        <p>
+          Cambia el tema claro u oscuro de tu dispositivo, o usa las DevTools
+          del navegador (<code>Emulate CSS prefers-color-scheme</code>).
+        </p>
+      </div>
+      <pre>
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-fondo: var(--color-tinta-900, #14213d);
+  }
+}</pre
+      >
+      <p><a href="#">Un enlace de ejemplo</a></p>
+    </main>
+  </body>
+</html>
