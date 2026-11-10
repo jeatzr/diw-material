@@ -1,0 +1,32 @@
+// Reset y estilos base: lo que afecta a todo el documento.
+
+@use "variables" as v;
+
+// Custom properties de CSS: se pueden cambiar en el navegador (temas, JS)
+:root {
+  --color-primary: #{v.$color-primary};
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: v.$font-base;
+  font-size: v.$font-size-base;
+  line-height: 1.6;
+  color: v.$color-text;
+  background: v.$color-surface;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: v.$color-primary;
+}

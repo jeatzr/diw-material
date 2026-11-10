@@ -1,0 +1,8 @@
+// Único archivo que importa Vite. Solo lista los parciales,
+// en el orden en que debe aparecer su CSS: de lo general a lo específico.
+
+@use "variables";   // sin CSS, solo documenta qué hay
+@use "mixins";      // sin CSS
+@use "globals";     // 1. reset y base
+@use "layout";      // 2. estructura
+@use "components";  // 3. piezas, lo más específico al final

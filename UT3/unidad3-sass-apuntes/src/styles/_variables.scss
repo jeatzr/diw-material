@@ -1,0 +1,30 @@
+// Única fuente de verdad de los valores del proyecto.
+// No genera CSS: solo guarda valores para reutilizar.
+
+// Colores
+$color-primary: #3a6ea5;
+$color-primary-dark: #2c5480;
+$color-text: #222;
+$color-muted: #666;
+$color-surface: #fff;
+$color-border: #ddd;
+
+// Tipografía
+$font-base: "Inter", system-ui, sans-serif;
+$font-size-base: 1rem;
+
+// Espaciado
+$space-2: 0.5rem;
+$space-4: 1rem;
+$space-6: 1.5rem;
+$space-8: 2rem;
+
+// Layout
+$container-width: 1100px;
+
+// Breakpoints (mobile first)
+$breakpoints: (
+  sm: 576px,
+  md: 768px,
+  lg: 1024px,
+);

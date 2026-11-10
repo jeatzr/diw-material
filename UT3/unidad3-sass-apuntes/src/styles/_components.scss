@@ -1,0 +1,52 @@
+// Piezas reutilizables con nombres BEM: bloque__elemento--modificador
+
+@use "variables" as v;
+@use "mixins" as m;
+
+.card {
+  padding: v.$space-4;
+  border: 1px solid v.$color-border;
+  border-radius: 8px;
+  background: v.$color-surface;
+
+  &__title {
+    margin-block: 0 v.$space-2;
+    font-size: 1.25rem;
+  }
+
+  &__text {
+    margin-block: 0 v.$space-4;
+    color: v.$color-muted;
+  }
+
+  &--highlighted {
+    border-color: v.$color-primary;
+  }
+
+  @include m.respond(md) {
+    padding: v.$space-6;
+  }
+}
+
+.button {
+  padding: v.$space-2 v.$space-4;
+  border: 1px solid v.$color-primary;
+  border-radius: 4px;
+  background: v.$color-primary;
+  color: #fff;
+  cursor: pointer;
+
+  &:hover {
+    background: v.$color-primary-dark;
+  }
+
+  &--secondary {
+    background: transparent;
+    color: v.$color-primary;
+
+    &:hover {
+      background: transparent;
+      color: v.$color-primary-dark;
+    }
+  }
+}

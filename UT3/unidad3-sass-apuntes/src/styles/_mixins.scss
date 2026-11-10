@@ -1,0 +1,17 @@
+// Herramientas reutilizables. No genera CSS por sí solo.
+
+@use "sass:map";
+@use "variables" as v;
+
+// Media query mobile first: @include respond(md) { ... }
+@mixin respond($name) {
+  @media (min-width: map.get(v.$breakpoints, $name)) {
+    @content;
+  }
+}
+
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

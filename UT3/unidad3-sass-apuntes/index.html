@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Proyecto Sass</title>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container">Mi sitio</div>
+    </header>
+
+    <main class="container">
+      <div class="grid">
+        <article class="card card--highlighted">
+          <h2 class="card__title">Título</h2>
+          <p class="card__text">Contenido de la tarjeta.</p>
+          <button class="button">Aceptar</button>
+          <button class="button button--secondary">Cancelar</button>
+        </article>
+
+        <article class="card">
+          <h2 class="card__title">Otra tarjeta</h2>
+          <p class="card__text">Sin modificador.</p>
+        </article>
+
+        <article class="card">
+          <h2 class="card__title">Una tercera</h2>
+          <p class="card__text">Cambia el ancho de la ventana para ver cómo pasa de 1 a 2 y a 3 columnas.</p>
+        </article>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">Pie de página</div>
+    </footer>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

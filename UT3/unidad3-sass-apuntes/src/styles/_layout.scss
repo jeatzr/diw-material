@@ -1,0 +1,36 @@
+// Estructura grande de la página: contenedor, cabecera, pie y rejillas.
+
+@use "variables" as v;
+@use "mixins" as m;
+
+.container {
+  width: 100%;
+  max-width: v.$container-width;
+  margin-inline: auto;
+  padding-inline: v.$space-4;
+}
+
+.site-header {
+  padding-block: v.$space-4;
+  border-bottom: 1px solid v.$color-border;
+}
+
+.site-footer {
+  padding-block: v.$space-6;
+  color: v.$color-muted;
+}
+
+.grid {
+  display: grid;
+  gap: v.$space-4;
+  grid-template-columns: 1fr;
+  margin-block: v.$space-6;
+
+  @include m.respond(md) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include m.respond(lg) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
