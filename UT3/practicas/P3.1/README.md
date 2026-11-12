@@ -12,7 +12,8 @@ Crear una página web responsive a partir del diseño de las dos páginas (landi
 
 ### **1. Diseñar la versión móvil en Figma**
 
-1. A partir del diseño de escritorio de las dos páginas ya realizado en una práctica anterior:
+1. **Comprobar que el prototipo de partida es válido.** Antes de empezar, revisa que el diseño de escritorio esté construido sobre un sistema de rejilla (grid) de varias columnas (por ejemplo, 12 columnas en escritorio) que te permita reorganizar los elementos al reducir el ancho. Si tu prototipo no cumple este estándar (elementos posicionados libremente, sin columnas, sin márgenes ni gutters definidos), **rehazlo o parte de uno nuevo**. Puedes generar un nuevo prototipo con la ayuda de herramientas de IA en muy poco tiempo, siempre que parta de una rejilla bien definida y use las variables del sistema de diseño.
+2. A partir del diseño de escritorio de las dos páginas realizadas como prototipo del sistema de diseño realizado en el Tema 1 o de un nuevo sitio web propuesto.
    - Diseñar la versión móvil o estrecha siguiendo principios de diseño responsive. El diseño móvil se hará en base a las variables de Figma ya definidas y también puede generar nuevas variables.
    - Realizar los cambios necesarios en el sistema de diseño para que de cabida a la versión móvil.
    - Exportar los recursos gráficos necesarios y las variables en versión SASS para la implementación.
@@ -29,9 +30,9 @@ src/
 ├── styles/
 │   ├── _variables.scss
 │   ├── _mixins.scss
-│   ├── _header.scss
-│   ├── _footer.scss
+│   ├── _components.scss
 │   ├── _layout.scss
+│   ├── _globals.scss
 │   └── main.scss
 ├── assets/
 │   ├── imágenes, íconos, etc.
@@ -49,7 +50,6 @@ src/
 #### **SASS**
 
 1. **Variables**:
-
    - Pegar las variables exportadas de Figma en formato SASS al fichero `_variables.scss`.
    - Define otras variables a mano si fuese necesario pero siempre en dicho archivo.
    - Ejemplo:
@@ -61,7 +61,6 @@ src/
    ```
 
 2. **Mixins**:
-
    - Crea al menos un mixin en `_mixins.scss` para estilos reutilizables.
    - Ejemplo:
 
@@ -76,7 +75,6 @@ src/
    ```
 
 3. **Breakpoints y Media Queries**:
-
    - Define un gestor de media queries en `_mixins.scss` utilizando mapas y mixins.
    - Ejemplo:
 
@@ -114,7 +112,6 @@ src/
    ```
 
 4. **Anidamiento**:
-
    - Usa anidamiento para organizar estilos relacionados dentro de cada componente.
    - Ejemplo (en `_header.scss`):
 
@@ -186,7 +183,7 @@ src/
 |                                  | - Uso de etiquetas semánticas (`header`, `main`, `footer`, etc.) para estructurar el contenido. | 5 puntos              |
 |                                  | - Código HTML limpio, indentado y sin errores.                                                  | 5 puntos              |
 | **3. Uso de SASS**               |                                                                                                 | **35 puntos**         |
-|                                  | - Uso correcto de **variables** para colores, fuentes, tamaños comunes (mínimo 3 variables).    | 5 puntos              |
+|                                  | - Uso correcto de **variables** para colores, fuentes, tamaños comunes.                         | 5 puntos              |
 |                                  | - Implementación de al menos **un mixin** funcional y reutilizable.                             | 5 puntos              |
 |                                  | - Uso adecuado de **anidamiento** para estructurar estilos relacionados.                        | 5 puntos              |
 |                                  | - Uso de **listas o mapas** en SASS para gestionar datos repetidos (mínimo 1 ejemplo).          | 5 puntos              |
